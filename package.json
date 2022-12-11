@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend-TFG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexia7G/backend-tfg.git"
+  },
+  "author": "Alexia Gallo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexia7G/backend-tfg/issues"
+  },
+  "homepage": "https://github.com/Alexia7G/backend-tfg#readme"
+}
