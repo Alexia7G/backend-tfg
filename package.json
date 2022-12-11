@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Alexia7G/backend-tfg/issues"
   },
-  "homepage": "https://github.com/Alexia7G/backend-tfg#readme"
+  "homepage": "https://github.com/Alexia7G/backend-tfg#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3"
+  }
 }
