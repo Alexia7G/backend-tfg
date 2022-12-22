@@ -1,0 +1,3 @@
+{
+  "presets": ["@babel/preset-env"] //este preset lee el código y lo convierte
+}
