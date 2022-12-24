@@ -9,14 +9,13 @@ Content-Type: application/json
 
 {
   "nombre": "betos",
-  "categoria": 1,
+  //"categoria": 1,
   "horarios": "lu y mi",
   "calle": "siempre viva",
   "nroCalle": 123,
-  "ciudad": 1,
+  //"ciudad": 1,
   "web": "laweb",
   "telefono": "6566465465",
-  "tipoPrecio": null,
   "facebook": "face",
   "instagram": "insta",
   "descripcion": "bla bla"
