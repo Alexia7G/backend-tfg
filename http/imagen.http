@@ -1,0 +1,9 @@
+@api = http://localhost:3000/imagen
+
+POST {{api}}/nueva 
+Content-Type: application/json
+
+{
+  "imagen": "pruebaImagen",
+  "establecimiento": 1
+}

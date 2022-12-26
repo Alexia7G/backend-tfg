@@ -7,6 +7,7 @@ import categoriaRoute from "./rutas/categoriaRoute";
 import paisRoute from "./rutas/paisRoute";
 import ciudadRoute from "./rutas/ciudadRoute";
 import provinciasRoute from "./rutas/provinciaRoute";
+import imagenesRoute from './rutas/imagenRoute'
 
 const app = express();
 
@@ -19,7 +20,8 @@ app.use(
   categoriaRoute,
   paisRoute,
   ciudadRoute,
-  provinciasRoute
+  provinciasRoute,
+  imagenesRoute
 );
 
 export default app;

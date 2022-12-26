@@ -31,5 +31,7 @@ export const guardarEstablecimiento = async (req, res) => {
     id: results.insertId,
     ...req.body,
   });
+
+  
 };
 
