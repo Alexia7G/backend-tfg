@@ -1,5 +1,10 @@
 import { connect } from "../basededatos";
 import fs from "fs";
+import path from 'path';
+
+const CARPETA_IMAGEN = path.join(__dirname, '../uploads');
+
+//export const RUTA_IMAGEN = "/home/alexia/imagenestfg";
 
 export const guardarImagen = async (imagenes, idEstablecimiento) => {
   const con = await connect();
@@ -17,7 +22,7 @@ export const guardarImagen = async (imagenes, idEstablecimiento) => {
     let buf = Buffer.from(img.base64, "base64");
     let imgName = `${idEstablecimiento}_${img.name}.jpeg`;
 
-    fs.writeFile(`/home/alexia/imagenestfg/${imgName}`, buf, (error) => {
+    fs.writeFile(`${CARPETA_IMAGEN}/${imgName}`, buf, (error) => {
       if (error) {
         console.error(error);
         return;
