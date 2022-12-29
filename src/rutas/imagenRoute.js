@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { guardarImagen } from "../controladores/imagenController";
+import { getImagenesXId, prueba } from "../controladores/imagenController";
 
 const ruta = Router();
 
-ruta.post("/imagen/nueva", guardarImagen);
+ruta.get("/imagen/:idEstablecimiento", getImagenesXId);
 
 export default ruta;

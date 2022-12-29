@@ -7,3 +7,6 @@ Content-Type: application/json
   "imagen": "pruebaImagen",
   "establecimiento": 1
 }
+
+###
+GET {{api}}/10

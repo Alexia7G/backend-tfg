@@ -39,3 +39,5 @@ export const guardarUsuario = async (req, res) => {
     //para que devuelva el primer objeto del arreglo de resultados
     res.json(rows[0]);
   };
+
+  

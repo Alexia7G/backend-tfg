@@ -1,8 +1,8 @@
 import { connect } from "../basededatos";
 import fs from "fs";
-import path from 'path';
+import path from "path";
 
-const CARPETA_IMAGEN = path.join(__dirname, '../uploads');
+const CARPETA_IMAGEN = path.join(__dirname, "../uploads");
 
 //export const RUTA_IMAGEN = "/home/alexia/imagenestfg";
 
@@ -29,10 +29,46 @@ export const guardarImagen = async (imagenes, idEstablecimiento) => {
       }
     });
 
-    const [results] = await con.query(
+    await con.query(
       "INSERT INTO IMAGENES (im_imagen, im_es_establecimiento, im_fecha_creacion)" +
         "VALUES (?,?,NOW())",
       [imgName, idEstablecimiento]
     );
   }
+};
+
+export const getImagenesXId = async (req, res) => {
+  const con = await connect();
+  const [rows] = await con.query(
+    "SELECT im_imagen FROM IMAGENES WHERE im_es_establecimiento = ?",
+    [req.params.idEstablecimiento]
+  );
+  let arrayImagenes = [];
+
+  for (const imgName of rows) {
+    let file = await new Promise((resolve, reject) => {
+      fs.readFile(
+        `${CARPETA_IMAGEN}/${imgName.im_imagen}`,
+        "base64",
+        (error, data) => {
+          if (!error) {
+            resolve(data);
+          } else {
+            reject(console.log(error));
+          }
+        }
+      )
+      // .catch((error) => {
+      //   console.log(error);
+      //   return;
+      // });
+    });
+
+    arrayImagenes.push({
+      data: file,
+      ruta: `${CARPETA_IMAGEN}/${imgName.im_imagen}`,
+    });
+  }
+
+  res.json(arrayImagenes);
 };

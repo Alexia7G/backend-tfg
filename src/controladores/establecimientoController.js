@@ -5,7 +5,7 @@ export const getEstablecimientos = async (req, res) => {
   //abro la conexión
   const con = await connect();
   //hago la consulta
-  const [rows] = await con.query("SELECT * FROM ESTABLECIMIENTOS");
+  const [rows] = await con.query("SELECT * FROM ESTABLECIMIENTOS ORDER BY es_id_establecimiento DESC");
   res.json(rows);
 };
 
